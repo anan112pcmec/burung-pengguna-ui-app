@@ -1,0 +1,1 @@
+export const FontSection: string = "font-mono tracking-tighter"
