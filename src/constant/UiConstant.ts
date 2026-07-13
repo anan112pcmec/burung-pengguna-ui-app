@@ -1,0 +1,1 @@
+export const Full: string = "w-full h-full";
