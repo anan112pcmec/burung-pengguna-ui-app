@@ -9,7 +9,7 @@ import { MarginFromHeader } from "../../constant/NavbarDesign";
 	import TanpaDataVerbose from "$lib/home/TanpaDataVerbose.svelte";
 
 </script>
-<div class="p-5 space-y-4 {MarginFromHeader}">
+<div class="pr-18 pl-18 space-y-4 {MarginFromHeader}">
     <Pengenalan/>
     <PointsPresentation/>
     <UiClean/>
