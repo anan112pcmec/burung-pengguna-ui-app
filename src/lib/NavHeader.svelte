@@ -8,9 +8,9 @@
     const mainMenus = ["Ladies", "Men", "Divided", "Kids", "H&M HOME", "Sale"];
 </script>
 
-<header class="fixed top-0 w-full bg-white border-b border-gray-200 grid grid-rows-[30%_70%] h-[9rem] font-sans text-[13px] z-50">
+<header class="fixed top-0 w-full bg-white border-b border-gray-200 grid grid-rows-[30%_70%] h-[8rem] font-sans text-[13px] z-50">
     
-    <div class="{Full} px-6 flex items-center justify-between text-gray-500 text-[11px]">
+    <div class="{Full} px-6 flex items-center border-b-2 justify-between text-gray-500 text-[11px]">
         <div class="flex gap-4">
             {#each topMenus as menu}
                 <a href="/" class="hover:text-black transition-colors {FontSection}">{menu}</a>
