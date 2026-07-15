@@ -48,8 +48,8 @@
     </div>
 
     <div class="bg-gray-100 border-t border-gray-200 flex flex-col justify-center items-center px-12 text-center text-gray-400 text-[11px]">
-        <p class="mb-1 text-gray-500">The content of this site is copyright-protected and is the property of H&M Hennes & Mauritz AB.</p>
-        <p>&copy; 2026 H&M Group. All rights reserved.</p>
+        <p class="mb-1 text-gray-500">The content of this site is copyright-protected and is the property of Faiz Hannan Hakim.</p>
+        <p>&copy; 2026 Burung Group. All rights reserved.</p>
     </div>
 
 </footer>

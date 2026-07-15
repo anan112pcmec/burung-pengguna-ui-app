@@ -1,13 +1,14 @@
 <script>
-	import Contributor from "$lib/home/Contributor.svelte";
-	import LangkahIntegrasi from "$lib/home/LangkahIntegrasi.svelte";
-	import Pengenalan from "$lib/home/Pengenalan.svelte";
-	import PointsPresentation from "$lib/home/PointsPresentation.svelte";
-	import Testimoni from "$lib/home/Testimoni.svelte";
-import { MarginFromHeader } from "../../constant/NavbarDesign";
-	import UiClean from "$lib/home/UiClean.svelte";
-	import TanpaDataVerbose from "$lib/home/TanpaDataVerbose.svelte";
-	import Filosofi from "$lib/home/Filosofi.svelte";
+	import Filosofi from "$lib/page/home/Filosofi.svelte";
+	import LangkahIntegrasi from "$lib/page/home/LangkahIntegrasi.svelte";
+	import Pengenalan from "$lib/page/home/Pengenalan.svelte";
+	import PointsPresentation from "$lib/page/home/PointsPresentation.svelte";
+	import TanpaDataVerbose from "$lib/page/home/TanpaDataVerbose.svelte";
+	import Testimoni from "$lib/page/home/Testimoni.svelte";
+	import UiClean from "$lib/page/home/UiClean.svelte";
+	import { MarginFromHeader } from "../../constant/NavbarDesign";
+
+	
 
 </script>
 <div class="pr-18 pl-18 space-y-4 {MarginFromHeader}">

@@ -51,9 +51,43 @@
             clearTimeout(timeoutB);
         };
     });
+
+    function scrollAfterDelay(node: HTMLElement) {
+        let timer: ReturnType<typeof setTimeout>;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 1. Elemen masuk layar -> Mulai hitung mundur 5 detik (5000ms)
+                    timer = setTimeout(() => {
+                        window.scrollBy({
+                            top: 428, // <--- Sesuaikan jarak scroll-nya di sini
+                            behavior: 'smooth'
+                        });
+                    }, 5000);
+                } else {
+                    // 2. Elemen keluar layar sebelum 5 detik -> Batalkan timer (Safety check)
+                    clearTimeout(timer);
+                }
+            });
+        }, {
+            threshold: 0.5 // Elemen dianggap "masuk" kalau sudah kelihatan minimal 50%
+        });
+
+        // Mulai mengamati elemen
+        observer.observe(node);
+
+        // Cleanup saat komponen di-destroy
+        return {
+            destroy() {
+                observer.unobserve(node);
+                clearTimeout(timer);
+            }
+        };
+    }
 </script>
 
-<section id="filosofi" class="w-full h-[24rem] font-bold mt-20 p-4 text-7xl/tight text-right font-sans text-slate-900 flex justify-center items-center">
+<section use:scrollAfterDelay id="filosofi" class="w-full h-[24rem] font-bold mt-20 p-4 text-7xl/tight text-right font-sans text-slate-900 flex justify-center items-center">
     <h1> 
         Keep it 
         <span class="inline-grid grid-cols-1 grid-rows-1 text-left vertical-align-middle">

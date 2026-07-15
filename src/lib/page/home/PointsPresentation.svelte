@@ -24,7 +24,14 @@
 <div class= "grid grid-cols-[80%_20%]">
    <div></div>
    <div>
-        <button class="border text-right border-zinc-700/50 rounded-lg p-2 text-zinc-700/70 hover:text-white hover:bg-slate-800 transition duration-300">
+        <button class="border text-right border-zinc-700/50 rounded-lg p-2 text-zinc-700/70 hover:text-white hover:bg-slate-800 transition duration-300"
+        onclick={() => {
+            window.scrollBy({
+            top: 400, 
+            behavior: 'smooth' 
+            });
+        }}
+        >
             Yang Kami Tawarkan
         </button>
    </div>

@@ -1,3 +1,11 @@
+import type { Snippet } from "svelte";
+
+export interface kartuPengenalanData {
+    header: string;
+    isi?: Snippet;
+}
+
+
 export interface carouselData {
     header: string;
     isi: string;

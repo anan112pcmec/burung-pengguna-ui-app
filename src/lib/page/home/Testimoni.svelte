@@ -23,11 +23,8 @@
 {/snippet}
 
 <script lang="ts">
-	import { flip } from 'svelte/animate';
-	import { Full } from '../../constant/UiConstant';
+	import { Full } from '../../../constant/UiConstant';
 	import type { Testimoni } from './types';
-	import { fade, fly } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
 
     let testimoniBurung: Testimoni[] = $state<Testimoni[]>([
     {
@@ -148,7 +145,7 @@
     }
 </style>
 
-<section id="testimoni" class="w-full h-[24rem] p-4 grid grid-rows-[20%_7%_10%_63%]">
+<section id="testimoni" class="w-full h-[24rem] mt-20 p-4 grid grid-rows-[20%_7%_10%_63%]">
     <div class="flex justify-left items-left p-4">
         <h1 class="text-left font-semibold text-5xl bottom-0 text-slate-900">
             Testimoni

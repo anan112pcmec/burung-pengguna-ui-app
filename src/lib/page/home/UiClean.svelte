@@ -4,7 +4,7 @@
 
 </script>
 
-<section id="kelebihan-app" class=" mt-20 w-full h-[24rem] p-4  grid grid-cols-[45%_10%_45%]">
+<section id="kelebihan-app" class="  w-full h-[24rem] p-4  grid grid-cols-[45%_10%_45%]">
     <div class="">
         <h1 class="text-semibold text-lg text-zinc-700/80">Ui Clean Super Cepat</h1>
         <br>
@@ -23,7 +23,13 @@
                 <p>Status pengiriman dan interaksi dengan penjual mudah diikuti, semua transparan.</p>
             </li>
             <br>
-            <button class="border text-right border-zinc-700/50 rounded-lg p-2 text-zinc-700/70 hover:text-white hover:bg-slate-800 transition duration-300">
+            <button class="border text-right border-zinc-700/50 rounded-lg p-2 text-zinc-700/70 hover:text-white hover:bg-slate-800 transition duration-300"
+                        onclick={() => {
+                            window.scrollBy({
+                            top: 468, 
+                            behavior: 'smooth' 
+                            });
+                        }}>
                 Lanjut
             </button>
         </ul>

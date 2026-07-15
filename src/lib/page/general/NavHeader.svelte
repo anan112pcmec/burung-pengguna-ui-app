@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { FontSection } from "../constant/NavbarDesign";
-	import { Full } from "../constant/UiConstant";
+	import { navbarState } from "$lib/state/general/state.svelte";
+	import { FontSection } from "../../../constant/NavbarDesign";
+	import { Full } from "../../../constant/UiConstant";
 
 	const topMenus = ["Customer Service", "Newsletter", "Find a store"];
 
@@ -29,7 +30,7 @@
 	onscroll={updateProgress}
 />
 
-<header class="fixed top-0 w-full bg-white border-b border-gray-200 grid grid-rows-[25%_75%] h-[7rem] font-sans text-[13px] z-50">
+<header class="fixed top-0 w-full bg-white border-b border-gray-200 grid grid-rows-[25%_75%] h-[7rem] font-sans text-[13px] z-100">
 	
 	<div class="{Full} px-6 flex items-center justify-between text-gray-500 text-[11px] relative border-b border-gray-100">
 		<div class="flex gap-4">
@@ -70,12 +71,12 @@
 
 			<div class="group relative flex items-center gap-2 cursor-pointer py-1">
 				<div class="h-8 w-8 rounded-full bg-slate-200 border border-gray-300 overflow-hidden flex-none">
-					<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="h-full w-full object-cover" />
+					<img src="src/constant/LogoBurung.png" alt="Avatar" class="h-full w-full object-cover" />
 				</div>
 				
 				<div class="hidden sm:block min-w-0 max-w-[80px]">
-					<p class="text-xs font-semibold text-gray-900 truncate">Rian H.</p>
-					<p class="text-[10px] text-gray-500 truncate">Pembeli Setia</p>
+					<p class="text-xs font-semibold text-gray-900 truncate">nancuy.</p>
+					<p class="text-[10px] text-gray-500 truncate">Yang bikin</p>
 				</div>
 
 				<svg class="text-gray-400 group-hover:text-gray-600 transition-transform duration-200 group-hover:rotate-180" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,24 +101,32 @@
 			<img class="h-20 mt-2" src="../src/constant/LogoBurung.png" alt="">
 		</div>
 
-		<div class="{Full} flex items-center justify-end gap-6 text-gray-700 {FontSection}">
-			<div class="relative border-b border-transparent hover:border-black focus-within:border-black pb-1 transition-colors">
-				<input 
-					type="text" 
-					placeholder="Search products" 
-					class="bg-transparent outline-none text-[12px] w-32 focus:w-44 transition-all duration-300 placeholder-gray-400"
-				/>
-			</div>
-			
-			<a  class="flex items-center gap-1 hover:text-black">
-				<span>Sign in</span>
-			</a>
-			<a  class="flex items-center gap-1 hover:text-black">
-				<span>Favorites</span>
-			</a>
-			<a  class="flex items-center gap-1 hover:text-black font-medium">
-				<span>Wishlist (0)</span>
-			</a>
+		<div class="{Full} flex items-center justify-end gap-6 text-gray-700 {FontSection} transition duration-700">
+			<div class="{Full} flex items-center justify-end gap-6 text-gray-700 {FontSection}">
+    <!-- Wadah input: Lebar garis bawah memanjang mulus saat fokus -->
+    <div class="relative border-b border-transparent hover:border-black focus-within:border-black pb-1 transition-colors duration-300">
+        <input 
+            type="text" 
+            placeholder="Search products" 
+            onfocus={() => navbarState.search()}
+            onblur={() =>  navbarState.unsearch()}
+            class="bg-transparent outline-none text-[12px] transition-all duration-500 ease-in-out placeholder-gray-400 {navbarState.searching ? 'w-64' : 'w-32'}"
+        />
+    </div>
+    
+    <!-- Bungkus menu kanan dalam wadah fleksibel dengan transisi lebar dan opacity -->
+    <div class="flex items-center gap-6 overflow-hidden transition-all duration-500 ease-in-out {navbarState.searching ? 'w-0 opacity-0 pointer-events-none' : 'w-64 opacity-100'}">
+        <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200" href="/home"> 
+            <span>Sign in</span>
+        </a>
+        <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200">
+            <span>Favorites</span>
+        </a>
+        <a class="flex items-center gap-1 hover:text-black font-medium whitespace-nowrap transition-colors duration-200">
+            <span>Wishlist (0)</span>
+        </a>
+    </div>
+</div>
 		</div>
 
 	</div>
