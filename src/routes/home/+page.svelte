@@ -12,7 +12,7 @@
 	
 
 </script>
-<div class="pr-18 pl-18 space-y-4 {MarginFromHeader}">
+<main class="pr-18 pl-18 space-y-4 {MarginFromHeader}">
     <Pengenalan/>
     <PointsPresentation/>
     <UiClean/>
@@ -20,4 +20,4 @@
     <LangkahIntegrasi/>
     <Filosofi/>
     <Testimoni/>
-</div>
+</main>
