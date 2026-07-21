@@ -62,7 +62,7 @@
 				</svg>
 			</button>
 
-			<button class="relative p-1.5 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
+			<button class="relative p-1.5 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer" onclick={() =>{goto("/cart")}}>
 				<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white px-1">3</span>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M3 3H5L5.4 5M5.4 5L7 13H17L19 5H5.4ZM7 13L6 17H19M9 21C9 21.5523 8.55228 22 8 22C7.44772 22 7 21.5523 7 21C7 20.4477 7.44772 20 8 20C8 20 9 20 9 21ZM18 21C18 21.5523 17.5523 22 17 22C16.4477 22 16 21.5523 16 21C16 20.4477 16.4477 20 17 20C17.5523 20 18 20 18 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

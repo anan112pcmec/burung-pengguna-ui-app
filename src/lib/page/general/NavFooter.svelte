@@ -1,55 +1,83 @@
 <script lang="ts">
-    const footerHeaders = "font-bold tracking-wide text-gray-900 mb-4 uppercase text-[12px]";
-    const footerLinks = "text-gray-600 hover:text-black transition-colors block mb-2 text-[12px]";
+    const footerHeaders = "text-[10px] font-bold tracking-[0.18em] text-slate-950/50 uppercase mb-4";
+    const footerLinks = "text-slate-700/70 hover:text-slate-950 transition-colors block mb-2 text-xs font-medium tracking-wide";
 </script>
 
-<footer class="bottom-0 left-0 w-full mt-20 bg-gray-50 border-t border-gray-200 h-[23rem] grid grid-rows-[75%_25%] font-sans">
+<footer class="w-full mt-20 bg-white border-t border-zinc-800/20 font-sans">
     
-    <div class="grid grid-cols-[20%_20%_20%_40%] px-12 pt-8">
-        <div>
-            <h4 class={footerHeaders}>Shop</h4>
-            <ul>
-                <li><a href="/" class="{footerLinks}">Women</a></li>
-                <li><a href="/"  class="{footerLinks}">Men</a></li>
-                <li><a href="/"  class="{footerLinks}">Kids</a></li>
-                <li><a href="/"  class="{footerLinks}">H&M HOME</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class={footerHeaders}>Corporate Info</h4>
-            <ul>
-                <li><a href="/"  class="{footerLinks}">Career at H&M</a></li>
-                <li><a href="/"  class="{footerLinks}">About H&M Group</a></li>
-                <li><a href="/"  class="{footerLinks}">Sustainability</a></li>
-                <li><a href="/" class="{footerLinks}">Press</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class={footerHeaders}>Help</h4>
-            <ul>
-                <li><a href="/"  class="{footerLinks}">Customer Service</a></li>
-                <li><a href="/"  class="{footerLinks}">My Account</a></li>
-                <li><a href="/" class="{footerLinks}">Find a Store</a></li>
-                <li><a href="/" class="{footerLinks}">Legal & Privacy</a></li>
-            </ul>
-        </div>
-
-        <div class="pl-6 border-l border-gray-200">
-            <h4  class="{footerHeaders}">Become a member</h4>
-            <p class="text-gray-500 text-[12px] mb-4 leading-relaxed">
-                Join now and get 10% off your next purchase, plus exclusive rewards and invitations.
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 lg:px-12 py-10">
+        
+        <div class="space-y-3">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-slate-950 inline-block"></span>
+                <h3 class="text-sm font-bold tracking-widest text-slate-950 uppercase font-mono">BURUNG.COM</h3>
+            </div>
+            <p class="text-slate-600/70 text-xs leading-relaxed font-light">
+                Platform e-commerce minimalis modern dengan sistem transaksi terenkripsi dan kurasi barang independen.
             </p>
-            <a href="/" class="inline-block bg-black text-white px-5 py-2 text-[12px] font-medium tracking-wide hover:bg-gray-800 transition-colors">
-                Read More &rarr;
-            </a>
+            <div class="pt-2">
+                <span class="text-[9px] font-mono text-slate-800/50 uppercase border border-zinc-800/20 px-2 py-1 rounded-xs">
+                    SYS VER 2.4.0 — ONLINE
+                </span>
+            </div>
         </div>
+
+        <div>
+            <h4 class={footerHeaders}>Jelajah Pasar</h4>
+            <ul class="space-y-1">
+                <li><a href="/market" class={footerLinks}>Semua Produk</a></li>
+                <li><a href="/market?cat=pria" class={footerLinks}>Pakaian Pria</a></li>
+                <li><a href="/market?cat=wanita" class={footerLinks}>Pakaian Wanita</a></li>
+                <li><a href="/market?cat=aksesoris" class={footerLinks}>Aksesori & Tech</a></li>
+                <li><a href="/official" class={footerLinks}>Official Stores</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class={footerHeaders}>Bantuan & Legal</h4>
+            <ul class="space-y-1">
+                <li><a href="/help/order" class={footerLinks}>Lacak Pesanan</a></li>
+                <li><a href="/help/faq" class={footerLinks}>Pusat Bantuan</a></li>
+                <li><a href="/help/seller" class={footerLinks}>Buka Toko (Seller)</a></li>
+                <li><a href="/privacy" class={footerLinks}>Kebijakan Privasi</a></li>
+                <li><a href="/terms" class={footerLinks}>Syarat & Ketentuan</a></li>
+            </ul>
+        </div>
+
+        <div class="space-y-3 lg:pl-6 lg:border-l lg:border-zinc-800/10">
+            <h4 class={footerHeaders}>LANGANAN WARTA BURUNG</h4>
+            <p class="text-slate-600/80 text-xs leading-relaxed font-light">
+                Dapatkan rilis produk terbatas dan voucher eksklusif langsung ke email kamu.
+            </p>
+            
+            <form onsubmit={(e) => e.preventDefault()} class="flex flex-col gap-2 pt-1">
+                <div class="relative">
+                    <input 
+                        type="email" 
+                        placeholder="ALAMAT EMAIL..." 
+                        class="w-full bg-slate-50 border border-zinc-800/20 px-3 py-2 text-xs font-mono text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-slate-950 transition rounded-xs"
+                    />
+                </div>
+                <button 
+                    type="submit" 
+                    class="bg-slate-950 text-white text-[10px] font-medium tracking-[0.18em] py-2.5 px-4 hover:bg-slate-800 transition duration-300 rounded-xs uppercase"
+                >
+                    BERLANGGANAN →
+                </button>
+            </form>
+        </div>
+
     </div>
 
-    <div class="bg-gray-100 border-t border-gray-200 flex flex-col justify-center items-center px-12 text-center text-gray-400 text-[11px]">
-        <p class="mb-1 text-gray-500">The content of this site is copyright-protected and is the property of Faiz Hannan Hakim.</p>
-        <p>&copy; 2026 Burung Group. All rights reserved.</p>
+    <div class="border-t border-zinc-800/10 bg-slate-50/50 py-4 px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between text-[10px] font-mono text-slate-500 gap-2">
+        <div>
+            &copy; 2026 BURUNG GROUP. ALL RIGHTS RESERVED.
+        </div>
+        <div class="flex items-center gap-4 text-slate-400">
+            <span>DESIGNED BY FAIZ HANNAN HAKIM</span>
+            <span>•</span>
+            <span class="text-slate-600 font-semibold">JAKARTA, ID</span>
+        </div>
     </div>
 
 </footer>

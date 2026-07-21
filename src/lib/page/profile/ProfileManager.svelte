@@ -70,36 +70,108 @@
             }
         }   
     };
+
+    
 }
+
+let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 
 </script>
 
 
 {#snippet Aktifitas()}
-            <div class="flex flex-col space-y-6">
-                <div class="border-b border-zinc-950/10 pb-3">
-                    <h3 class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">RANGKUMAN AKTIFITAS</h3>
+           <div class="flex flex-col space-y-6">
+    <div class="border-b border-zinc-950/10 pb-3">
+        <h3 class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">RANGKUMAN AKTIVITAS</h3>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+        <div class="border border-zinc-950/10 p-3 rounded-sm">
+            <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Hari Ini</span>
+            <span class="text-sm font-bold text-slate-900 font-mono">Rp 150.000</span>
+        </div>
+        <div class="border border-zinc-950/10 p-3 rounded-sm">
+            <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Minggu Ini</span>
+            <span class="text-sm font-bold text-slate-900 font-mono">Rp 1.250.000</span>
+        </div>
+        <div class="border border-zinc-950/10 p-3 rounded-sm">
+            <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Bulan Ini</span>
+            <span class="text-sm font-bold text-slate-900 font-mono">Maret — Rp 4.800.000</span>
+        </div>
+        <div class="border border-zinc-950/10 p-3 rounded-sm">
+            <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Tahun Ini</span>
+            <span class="text-sm font-bold text-slate-900 font-mono">2026 — Rp 14.200.000</span>
+        </div>
+    </div>
+
+    <div class="flex flex-col space-y-3 pt-2">
+        <div class="flex items-center justify-between border-b border-zinc-950/10 pb-2">
+            <h3 class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">PESAN & NOTIFIKASI</h3>
+            <span class="text-[9px] font-mono text-slate-950/40 uppercase">3 Pesan</span>
+        </div>
+
+        <div class="flex flex-col divide-y divide-zinc-950/10 border border-zinc-950/10 rounded-sm bg-white">
+            
+            <div class="p-3 flex items-center justify-between hover:bg-slate-50 transition cursor-pointer group">
+                <div class="flex flex-col space-y-0.5 pr-4">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-slate-950 inline-block"></span>
+                        <span class="text-[11px] font-bold text-slate-950 uppercase tracking-wide">Sistem Keamanan</span>
+                    </div>
+                    <p class="text-[10px] text-slate-800/70 line-clamp-1 pl-3.5">
+                        Perubahan password akun Anda berhasil dilakukan pada 21 Jul 2026, 14:20 WIB.
+                    </p>
                 </div>
-                <!-- Grid Pengeluaran -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="border border-zinc-950/10 p-3 rounded-sm">
-                        <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Hari Ini</span>
-                        <span class="text-sm font-bold text-slate-900">Rp 150.000</span>
-                    </div>
-                    <div class="border border-zinc-950/10 p-3 rounded-sm">
-                        <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Minggu Ini</span>
-                        <span class="text-sm font-bold text-slate-900">Rp 1.250.000</span>
-                    </div>
-                    <div class="border border-zinc-950/10 p-3 rounded-sm">
-                        <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Bulan Ini</span>
-                        <span class="text-sm font-bold text-slate-900">Maret — Rp 4.800.000</span>
-                    </div>
-                    <div class="border border-zinc-950/10 p-3 rounded-sm">
-                        <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Tahun Ini</span>
-                        <span class="text-sm font-bold text-slate-900">2026 — Rp 14.200.000</span>
-                    </div>
+                
+                <div class="flex flex-col items-end shrink-0 space-y-1">
+                    <span class="text-[8px] tracking-wider text-white bg-slate-950 px-1.5 py-0.5 rounded-xs uppercase font-semibold">
+                        Belum Dibuka
+                    </span>
+                    <span class="text-[9px] font-mono text-slate-800/40">10m lalu</span>
                 </div>
             </div>
+
+            <div class="p-3 flex items-center justify-between hover:bg-slate-50 transition cursor-pointer group">
+                <div class="flex flex-col space-y-0.5 pr-4">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-transparent inline-block"></span>
+                        <span class="text-[11px] font-medium text-slate-800 uppercase tracking-wide">Billing & Invoice</span>
+                    </div>
+                    <p class="text-[10px] text-slate-800/50 line-clamp-1 pl-3.5">
+                        Tagihan transaksi bulanan #INV-90218 telah diterbitkan.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col items-end shrink-0 space-y-1">
+                    <span class="text-[8px] tracking-wider text-slate-950/50 border border-zinc-950/20 px-1.5 py-0.5 rounded-xs uppercase font-medium">
+                        Dibuka
+                    </span>
+                    <span class="text-[9px] font-mono text-slate-800/40">Kemarin</span>
+                </div>
+            </div>
+
+            <div class="p-3 flex items-center justify-between hover:bg-slate-50 transition cursor-pointer group">
+                <div class="flex flex-col space-y-0.5 pr-4">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-transparent inline-block"></span>
+                        <span class="text-[11px] font-medium text-slate-800 uppercase tracking-wide">Dukungan Pelanggan</span>
+                    </div>
+                    <p class="text-[10px] text-slate-800/50 line-clamp-1 pl-3.5">
+                        Tiket bantuan #TK-402 telah diselesaikan oleh tim teknis kami.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col items-end shrink-0 space-y-1">
+                    <span class="text-[8px] tracking-wider text-slate-950/50 border border-zinc-950/20 px-1.5 py-0.5 rounded-xs uppercase font-medium">
+                        Dibuka
+                    </span>
+                    <span class="text-[9px] font-mono text-slate-800/40">18 Jul</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 {/snippet}
 
 {#snippet Profil()}
@@ -383,23 +455,173 @@
 {/snippet}
 
 {#snippet KeamananAkun()}
-       <form class="flex flex-col space-y-5 h-full justify-between">
-                <div class="space-y-4">
-                    <div class="flex flex-col space-y-2">
-                        <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Ubah Password Baru</span>
-                        <input type="password" placeholder="••••••••" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
-                    </div>
-                    <div class="flex flex-col space-y-2">
-                        <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Ubah PIN Keamanan (6 Digit)</span>
-                        <input type="password" maxlength="6" placeholder="••••••" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
+    {#snippet UbahPassword()}
+        <form class="flex flex-col space-y-5 h-full justify-between">
+            <div class="space-y-4">
+                <div class="flex flex-col space-y-2">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Password Lama</span>
+                    <input 
+                        type="password" 
+                        placeholder="••••••••" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" 
+                    />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Password Baru</span>
+                    <input 
+                        type="password" 
+                        placeholder="••••••••" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" 
+                    />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Alasan Mengubah</span>
+                    <textarea 
+                        rows="2"
+                        placeholder="Jelaskan alasan perubahan keamanan ini..." 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 resize-none"
+                    ></textarea>
+                </div>
+
+                <div class="flex flex-col space-y-2 pt-1">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Metode Verifikasi</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center justify-center gap-2 border border-slate-900/20 py-2 px-3 rounded-sm cursor-pointer hover:border-slate-950 transition group">
+                            <input type="radio" name="verification_method" value="email" class="accent-slate-950 cursor-pointer text-slate-900" checked />
+                            <span class="text-[10px] font-medium tracking-wider text-slate-800 uppercase group-hover:text-slate-950">OTP via Email</span>
+                        </label>
+                        <label class="flex items-center justify-center gap-2 border border-slate-900/20 py-2 px-3 rounded-sm cursor-pointer hover:border-slate-950 transition group">
+                            <input type="radio" name="verification_method" value="pin" class="accent-slate-950 text-slate-900  cursor-pointer" />
+                            <span class="text-[10px] font-medium tracking-wider text-slate-800 uppercase group-hover:text-slate-950">Via PIN Security</span>
+                        </label>
                     </div>
                 </div>
-                <div class="border-t border-zinc-950/10 pt-3 flex justify-end items-center">
-                    <button type="submit" class="text-xs tracking-wide bg-slate-950 text-white px-4 py-2 hover:bg-slate-800 transition duration-300 rounded-sm uppercase font-medium">
-                        Perbarui Keamanan
-                    </button>
+
+                <div class="pt-2">
+                    <label class="flex items-start gap-2.5 cursor-pointer select-none group">
+                        <input type="checkbox" required class="mt-0.5 accent-slate-950 rounded-xs cursor-pointer" />
+                        <span class="text-[10px] text-slate-900/70 leading-normal group-hover:text-slate-950">
+                            Saya menyetujui dan mematuhi seluruh <span class="font-bold underline text-slate-950">aturan & ketentuan keamanan</span> yang berlaku.
+                        </span>
+                    </label>
                 </div>
-            </form>
+            </div>
+
+            <div class="border-t border-zinc-950/10 pt-3 flex justify-end items-center mt-4">
+                <button type="submit" class="text-xs tracking-wide bg-slate-950 text-white px-4 py-2 hover:bg-slate-800 transition duration-300 rounded-sm uppercase font-medium">
+                    Perbarui Keamanan
+                </button>
+            </div>
+        </form>
+    {/snippet}
+
+    {#snippet UbahPin()}
+        <form class="flex flex-col space-y-5 h-full justify-between">
+            <div class="space-y-4">
+                <div class="flex flex-col space-y-2">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">PIN Lama</span>
+                    <input 
+                        type="password" 
+                        maxlength="6" 
+                        pattern="[0-9]*"
+                        inputmode="numeric"
+                        placeholder="••••••" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 font-mono tracking-[0.3em]" 
+                    />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">PIN Baru (6 Angka)</span>
+                    <input 
+                        type="password" 
+                        maxlength="6" 
+                        pattern="[0-9]*"
+                        inputmode="numeric"
+                        placeholder="••••••" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 font-mono tracking-[0.3em]" 
+                    />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Konfirmasi PIN Baru</span>
+                    <input 
+                        type="password" 
+                        maxlength="6" 
+                        pattern="[0-9]*"
+                        inputmode="numeric"
+                        placeholder="••••••" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 font-mono tracking-[0.3em]" 
+                    />
+                </div>
+
+                <div class="flex flex-col space-y-2 pt-1">
+                    <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Metode Verifikasi</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center justify-center gap-2 border border-slate-900/20 py-2 px-3 rounded-sm cursor-pointer hover:border-slate-950 transition group">
+                            <input type="radio" name="pin_verification_method" value="email" class="accent-slate-950 cursor-pointer" checked />
+                            <span class="text-[10px] font-medium tracking-wider text-slate-800 uppercase group-hover:text-slate-950">OTP via Email</span>
+                        </label>
+                        <label class="flex items-center justify-center gap-2 border border-slate-900/20 py-2 px-3 rounded-sm cursor-pointer hover:border-slate-950 transition group">
+                            <input type="radio" name="pin_verification_method" value="password" class="accent-slate-950 cursor-pointer" />
+                            <span class="text-[10px] font-medium tracking-wider text-slate-800 uppercase group-hover:text-slate-950">Via Password</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <label class="flex items-start gap-2.5 cursor-pointer select-none group">
+                        <input type="checkbox" required class="mt-0.5 accent-slate-950 rounded-xs cursor-pointer" />
+                        <span class="text-[10px] text-slate-900/70 leading-normal group-hover:text-slate-950">
+                            Saya mengerti bahwa PIN ini digunakan untuk <span class="font-bold underline text-slate-950">otorisasi transaksi penting</span>.
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="border-t border-zinc-950/10 pt-3 flex justify-end items-center mt-4">
+                <button type="submit" class="text-xs tracking-wide bg-slate-950 text-white px-4 py-2 hover:bg-slate-800 transition duration-300 rounded-sm uppercase font-medium">
+                    Perbarui PIN
+                </button>
+            </div>
+        </form>
+    {/snippet}
+       <div class="grid grid-cols-2 w-fit justify-center gap-1 border-b border-zinc-950/10 pb-1">
+            <button
+                type="button"
+                onclick={() => activeTab = 'password'}
+                class="px-3 py-1.5 text-[10px] font-medium tracking-[0.18em] uppercase transition-all duration-200 select-none rounded-sm"
+                style="
+                background-color: {activeTab === 'password' ? '#020617' : 'transparent'};
+                color: {activeTab === 'password' ? '#ffffff' : 'rgba(2, 6, 23, 0.5)'};
+                border: {activeTab === 'password' ? '1px solid #020617' : '1px solid transparent'};
+                "
+            >
+                Ubah Password
+            </button>
+
+            <button
+                type="button"
+                onclick={() => activeTab = 'pin'}
+                class="px-3 py-1.5 text-[10px] font-medium tracking-[0.18em] uppercase transition-all duration-200 select-none rounded-sm"
+                style="
+                background-color: {activeTab === 'pin' ? '#020617' : 'transparent'};
+                color: {activeTab === 'pin' ? '#ffffff' : 'rgba(2, 6, 23, 0.5)'};
+                border: {activeTab === 'pin' ? '1px solid #020617' : '1px solid transparent'};
+                "
+            >
+                Ubah Pin
+            </button>
+            </div>
+
+            <div class="mt-4">
+            {#if activeTab === 'password'}
+                {@render UbahPassword()}
+            {:else if activeTab === 'pin'}
+                {@render UbahPin()}
+            {/if}
+            </div>
 {/snippet}
 {#snippet Notifikasi()}
      <div class="flex flex-col space-y-6">

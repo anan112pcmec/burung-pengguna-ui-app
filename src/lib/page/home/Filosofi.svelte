@@ -87,29 +87,40 @@
     }
 </script>
 
-<section use:scrollAfterDelay id="filosofi" class="w-full h-[24rem] font-bold mt-20 p-4 text-7xl/tight text-right font-sans text-slate-900 flex justify-center items-center">
-    <h1> 
-        Keep it 
-        <span class="inline-grid grid-cols-1 grid-rows-1 text-left vertical-align-middle">
+<section 
+    use:scrollAfterDelay 
+    id="filosofi" 
+    class="w-full h-[28rem] mt-20 p-6 lg:p-8 flex flex-col justify-center items-center relative border-y border-zinc-800/10 my-8"
+>
+    <span class="text-[10px] font-bold tracking-[0.25em] text-slate-950/40 uppercase mb-4 font-mono">
+      CORE PHILOSOPHY
+    </span>
+
+    <h1 class="font-bold text-4xl sm:text-5xl md:text-6xl text-center font-sans text-slate-950 uppercase tracking-tight leading-snug max-w-5xl"> 
+        KEEP IT 
+        <span class="inline-grid grid-cols-1 grid-rows-1 text-left align-baseline underline decoration-slate-950 decoration-2 underline-offset-4">
             {#key teksA}
                 <span
                     in:fly={{ y: 25 * acakArah(), duration: 700, delay: 200, easing: quintOut }} 
                     out:fly={{ y: -25 * acakArah(), duration: 300, easing: quintOut }}  
-                    class="tulisan_a inline-block col-start-1 row-start-1">
+                    class="tulisan_a inline-block col-start-1 row-start-1 text-slate-950"
+                >
                     {teksA}
                 </span>
             {/key}
         </span>, 
-        Fly 
-        <span class="inline-grid grid-cols-1 grid-rows-1 text-left vertical-align-middle">
+        FLY 
+        <span class="inline-grid grid-cols-1 grid-rows-1 text-left align-baseline underline decoration-slate-950 decoration-2 underline-offset-4">
             {#key teksB}
                 <span 
                     in:fly={{ y: 25 * acakArah(), duration: 700, delay: 200, easing: quintOut }} 
                     out:fly={{ y: -25 * acakArah(), duration: 300, easing: quintOut }} 
-                    class="tulisan_b inline-block col-start-1 row-start-1">
+                    class="tulisan_b inline-block col-start-1 row-start-1 text-slate-950"
+                >
                     {teksB}
                 </span>
             {/key}
-        </span>
+        </span>.
     </h1>
+
 </section>
